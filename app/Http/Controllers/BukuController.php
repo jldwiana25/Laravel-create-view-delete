@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\buku;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BukuController extends Controller
 {
@@ -97,7 +100,7 @@ class BukuController extends Controller
             $buku->penerbit = $request->get('penerbit');
             $buku->tahun_terbit = $request->get('tahun_terbit');
             $buku->pengarang = $request->get('pengarang');
-            $buku->save();
+            // $buku->save();
     
             return redirect() -> route('buku.index')
                               -> with('success','New Booklist successfully Update');
