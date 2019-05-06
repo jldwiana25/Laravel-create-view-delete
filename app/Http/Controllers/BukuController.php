@@ -54,6 +54,7 @@ class BukuController extends Controller
                               -> with('success','New Booklist successfully created');
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -101,6 +102,7 @@ class BukuController extends Controller
             $buku->tahun_terbit = $request->get('tahun_terbit');
             $buku->pengarang = $request->get('pengarang');
             // $buku->save();
+            //savenya error
     
             return redirect() -> route('buku.index')
                               -> with('success','New Booklist successfully Update');
